@@ -33,13 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_JobLink = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Rb_Resume_Yes = new System.Windows.Forms.RadioButton();
-            this.Rb_Resume_No = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.Rb_CL_Yes = new System.Windows.Forms.RadioButton();
-            this.Rb_CL_No = new System.Windows.Forms.RadioButton();
             this.Btn_SaveData = new System.Windows.Forms.Button();
             this.Btn_ClearForm = new System.Windows.Forms.Button();
+            this.Cb_Resume = new System.Windows.Forms.CheckBox();
+            this.Cb_CoverLetter = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Txt_FolderName
@@ -79,62 +77,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Resume:";
-            // 
-            // Rb_Resume_Yes
-            // 
-            this.Rb_Resume_Yes.AutoSize = true;
-            this.Rb_Resume_Yes.Location = new System.Drawing.Point(113, 77);
-            this.Rb_Resume_Yes.Name = "Rb_Resume_Yes";
-            this.Rb_Resume_Yes.Size = new System.Drawing.Size(43, 17);
-            this.Rb_Resume_Yes.TabIndex = 5;
-            this.Rb_Resume_Yes.TabStop = true;
-            this.Rb_Resume_Yes.Text = "Yes";
-            this.Rb_Resume_Yes.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Resume_No
-            // 
-            this.Rb_Resume_No.AutoSize = true;
-            this.Rb_Resume_No.Location = new System.Drawing.Point(174, 77);
-            this.Rb_Resume_No.Name = "Rb_Resume_No";
-            this.Rb_Resume_No.Size = new System.Drawing.Size(39, 17);
-            this.Rb_Resume_No.TabIndex = 6;
-            this.Rb_Resume_No.TabStop = true;
-            this.Rb_Resume_No.Text = "No";
-            this.Rb_Resume_No.UseVisualStyleBackColor = true;
+            this.label3.Text = "Include Resume:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Cover Letter:";
-            // 
-            // Rb_CL_Yes
-            // 
-            this.Rb_CL_Yes.AutoSize = true;
-            this.Rb_CL_Yes.Location = new System.Drawing.Point(113, 108);
-            this.Rb_CL_Yes.Name = "Rb_CL_Yes";
-            this.Rb_CL_Yes.Size = new System.Drawing.Size(43, 17);
-            this.Rb_CL_Yes.TabIndex = 8;
-            this.Rb_CL_Yes.TabStop = true;
-            this.Rb_CL_Yes.Text = "Yes";
-            this.Rb_CL_Yes.UseVisualStyleBackColor = true;
-            // 
-            // Rb_CL_No
-            // 
-            this.Rb_CL_No.AutoSize = true;
-            this.Rb_CL_No.Location = new System.Drawing.Point(174, 108);
-            this.Rb_CL_No.Name = "Rb_CL_No";
-            this.Rb_CL_No.Size = new System.Drawing.Size(39, 17);
-            this.Rb_CL_No.TabIndex = 9;
-            this.Rb_CL_No.TabStop = true;
-            this.Rb_CL_No.Text = "No";
-            this.Rb_CL_No.UseVisualStyleBackColor = true;
+            this.label4.Text = "Include CoverLetter:";
             // 
             // Btn_SaveData
             // 
@@ -154,18 +108,34 @@
             this.Btn_ClearForm.Text = "Clear Form";
             this.Btn_ClearForm.UseVisualStyleBackColor = true;
             // 
+            // Cb_Resume
+            // 
+            this.Cb_Resume.AutoSize = true;
+            this.Cb_Resume.Location = new System.Drawing.Point(113, 77);
+            this.Cb_Resume.Name = "Cb_Resume";
+            this.Cb_Resume.Size = new System.Drawing.Size(15, 14);
+            this.Cb_Resume.TabIndex = 12;
+            this.Cb_Resume.UseVisualStyleBackColor = true;
+            // 
+            // Cb_CoverLetter
+            // 
+            this.Cb_CoverLetter.AutoSize = true;
+            this.Cb_CoverLetter.Location = new System.Drawing.Point(113, 108);
+            this.Cb_CoverLetter.Name = "Cb_CoverLetter";
+            this.Cb_CoverLetter.Size = new System.Drawing.Size(15, 14);
+            this.Cb_CoverLetter.TabIndex = 13;
+            this.Cb_CoverLetter.UseVisualStyleBackColor = true;
+            // 
             // Job_Doc_Organizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 175);
+            this.Controls.Add(this.Cb_CoverLetter);
+            this.Controls.Add(this.Cb_Resume);
             this.Controls.Add(this.Btn_ClearForm);
             this.Controls.Add(this.Btn_SaveData);
-            this.Controls.Add(this.Rb_CL_No);
-            this.Controls.Add(this.Rb_CL_Yes);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Rb_Resume_No);
-            this.Controls.Add(this.Rb_Resume_Yes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Txt_JobLink);
             this.Controls.Add(this.label2);
@@ -185,13 +155,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txt_JobLink;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton Rb_Resume_Yes;
-        private System.Windows.Forms.RadioButton Rb_Resume_No;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton Rb_CL_Yes;
-        private System.Windows.Forms.RadioButton Rb_CL_No;
         private System.Windows.Forms.Button Btn_SaveData;
         private System.Windows.Forms.Button Btn_ClearForm;
+        private System.Windows.Forms.CheckBox Cb_Resume;
+        private System.Windows.Forms.CheckBox Cb_CoverLetter;
     }
 }
 

@@ -44,5 +44,27 @@ namespace Job_Doc_Organizer
 
         }
 
+        private void Copy_Resume()
+        {
+            if(Cb_Resume.Checked)
+            {
+                string Orignal_Path = @"C:\Users\shivam\Desktop\Resume.docx";
+                string folderName = @"C:\Users\shivam\Desktop\JOBS";
+                path = Path.Combine(folderName, Txt_FolderName.Text);
+                File.Copy(Orignal_Path, path + Path.GetFileName(Orignal_Path));
+            }
+        }
+
+        private void Copy_CoverLetter()
+        {
+            if(Cb_CoverLetter.Checked)
+            {
+                string Orignal_Path = @"C:\Users\shivam\Desktop\Cover_Letter.docx";
+                string folderName = @"C:\Users\shivam\Desktop\JOBS";
+                path = Path.Combine(folderName, Txt_FolderName.Text);
+                File.Copy(Orignal_Path, path + Path.GetFileName(Orignal_Path));
+            }
+        }
+
     }
 }
