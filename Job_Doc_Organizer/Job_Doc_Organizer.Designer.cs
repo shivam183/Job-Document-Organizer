@@ -1,6 +1,6 @@
 ﻿namespace Job_Doc_Organizer
 {
-    partial class Form1
+    partial class Job_Doc_Organizer
     {
         /// <summary>
         /// Required designer variable.

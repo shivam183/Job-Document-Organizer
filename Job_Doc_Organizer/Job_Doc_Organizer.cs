@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Job_Doc_Organizer
 {
-    public partial class Form1 : Form
+    public partial class Job_Doc_Organizer : Form
     {
-        public Form1()
+        public Job_Doc_Organizer()
         {
             InitializeComponent();
         }
