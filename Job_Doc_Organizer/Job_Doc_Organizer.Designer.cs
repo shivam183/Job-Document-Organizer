@@ -98,6 +98,7 @@
             this.Btn_SaveData.TabIndex = 10;
             this.Btn_SaveData.Text = "SaveData";
             this.Btn_SaveData.UseVisualStyleBackColor = true;
+            this.Btn_SaveData.Click += new System.EventHandler(this.Btn_SaveData_Click);
             // 
             // Btn_ClearForm
             // 

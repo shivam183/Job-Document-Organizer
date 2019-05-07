@@ -21,6 +21,7 @@ namespace Job_Doc_Organizer
 
         private void Create_Directory()
         {
+            
             string folderName = @"C:\Users\shivam\Desktop\JOBS";
             path = Path.Combine(folderName, Txt_FolderName.Text);
             Directory.CreateDirectory(path);
@@ -29,11 +30,11 @@ namespace Job_Doc_Organizer
         private void Create_JobLinkTxtFile()
         {
             string FileName = "JobLink.txt";
-            path = Path.Combine(path, FileName);
+            string newPath = Path.Combine(path, FileName);
 
-            if(!File.Exists(path))
+            if(!File.Exists(newPath))
             {
-                using (FileStream fs = File.Create(path))
+                using (FileStream fs = File.Create(newPath))
                 {
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
@@ -49,9 +50,8 @@ namespace Job_Doc_Organizer
             if(Cb_Resume.Checked)
             {
                 string Orignal_Path = @"C:\Users\shivam\Desktop\Resume.docx";
-                string folderName = @"C:\Users\shivam\Desktop\JOBS";
-                path = Path.Combine(folderName, Txt_FolderName.Text);
-                File.Copy(Orignal_Path, path + Path.GetFileName(Orignal_Path));
+                string Resume_path = Path.Combine(path,Path.GetFileName(Orignal_Path));
+                File.Copy(Orignal_Path, Resume_path);
             }
         }
 
@@ -60,11 +60,17 @@ namespace Job_Doc_Organizer
             if(Cb_CoverLetter.Checked)
             {
                 string Orignal_Path = @"C:\Users\shivam\Desktop\Cover_Letter.docx";
-                string folderName = @"C:\Users\shivam\Desktop\JOBS";
-                path = Path.Combine(folderName, Txt_FolderName.Text);
-                File.Copy(Orignal_Path, path + Path.GetFileName(Orignal_Path));
+                string CL_path = Path.Combine(path, Path.GetFileName(Orignal_Path));
+                File.Copy(Orignal_Path, CL_path);
             }
         }
 
+        private void Btn_SaveData_Click(object sender, EventArgs e)
+        {
+            Create_Directory();
+            Create_JobLinkTxtFile();
+            Copy_Resume();
+            Copy_CoverLetter();
+        }
     }
 }
