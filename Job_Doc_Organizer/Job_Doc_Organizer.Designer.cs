@@ -44,7 +44,7 @@
             // 
             this.Txt_FolderName.Location = new System.Drawing.Point(113, 12);
             this.Txt_FolderName.Name = "Txt_FolderName";
-            this.Txt_FolderName.Size = new System.Drawing.Size(157, 20);
+            this.Txt_FolderName.Size = new System.Drawing.Size(191, 20);
             this.Txt_FolderName.TabIndex = 0;
             // 
             // label1
@@ -67,9 +67,9 @@
             // 
             // Txt_JobLink
             // 
-            this.Txt_JobLink.Location = new System.Drawing.Point(113, 44);
+            this.Txt_JobLink.Location = new System.Drawing.Point(113, 41);
             this.Txt_JobLink.Name = "Txt_JobLink";
-            this.Txt_JobLink.Size = new System.Drawing.Size(157, 20);
+            this.Txt_JobLink.Size = new System.Drawing.Size(191, 20);
             this.Txt_JobLink.TabIndex = 3;
             // 
             // label3
@@ -92,7 +92,7 @@
             // 
             // Btn_SaveData
             // 
-            this.Btn_SaveData.Location = new System.Drawing.Point(12, 143);
+            this.Btn_SaveData.Location = new System.Drawing.Point(35, 140);
             this.Btn_SaveData.Name = "Btn_SaveData";
             this.Btn_SaveData.Size = new System.Drawing.Size(129, 23);
             this.Btn_SaveData.TabIndex = 10;
@@ -102,7 +102,7 @@
             // 
             // Btn_ClearForm
             // 
-            this.Btn_ClearForm.Location = new System.Drawing.Point(147, 143);
+            this.Btn_ClearForm.Location = new System.Drawing.Point(181, 140);
             this.Btn_ClearForm.Name = "Btn_ClearForm";
             this.Btn_ClearForm.Size = new System.Drawing.Size(123, 23);
             this.Btn_ClearForm.TabIndex = 11;
@@ -116,7 +116,7 @@
             this.Cb_Resume.Location = new System.Drawing.Point(113, 77);
             this.Cb_Resume.Name = "Cb_Resume";
             this.Cb_Resume.Size = new System.Drawing.Size(15, 14);
-            this.Cb_Resume.TabIndex = 12;
+            this.Cb_Resume.TabIndex = 5;
             this.Cb_Resume.UseVisualStyleBackColor = true;
             // 
             // Cb_CoverLetter
@@ -125,14 +125,15 @@
             this.Cb_CoverLetter.Location = new System.Drawing.Point(113, 108);
             this.Cb_CoverLetter.Name = "Cb_CoverLetter";
             this.Cb_CoverLetter.Size = new System.Drawing.Size(15, 14);
-            this.Cb_CoverLetter.TabIndex = 13;
+            this.Cb_CoverLetter.TabIndex = 6;
             this.Cb_CoverLetter.UseVisualStyleBackColor = true;
             // 
             // Job_Doc_Organizer
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 175);
+            this.ClientSize = new System.Drawing.Size(325, 175);
             this.Controls.Add(this.Cb_CoverLetter);
             this.Controls.Add(this.Cb_Resume);
             this.Controls.Add(this.Btn_ClearForm);
@@ -143,6 +144,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_FolderName);
+            this.MaximizeBox = false;
             this.Name = "Job_Doc_Organizer";
             this.Text = "Job Document Organizer";
             this.ResumeLayout(false);
