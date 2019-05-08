@@ -108,6 +108,7 @@
             this.Btn_ClearForm.TabIndex = 11;
             this.Btn_ClearForm.Text = "Clear Form";
             this.Btn_ClearForm.UseVisualStyleBackColor = true;
+            this.Btn_ClearForm.Click += new System.EventHandler(this.Btn_ClearForm_Click);
             // 
             // Cb_Resume
             // 

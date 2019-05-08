@@ -10,6 +10,9 @@ namespace Job_Doc_Organizer
         string FileName = "JobLink.txt";
         string Orignal_ResumePath = @"C:\Users\shivam\Desktop\Resume.docx";
         string Orignal_CoverLetterPath = @"C:\Users\shivam\Desktop\Cover_Letter.docx";
+
+        bool DirectoryExist;
+
         string path;
         public Job_Doc_Organizer()
         {
@@ -30,16 +33,18 @@ namespace Job_Doc_Organizer
                     if (Directory.Exists(path))
                     {
                         MessageBox.Show("Directory Name Already Exists", "Duplicate Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DirectoryExist = true;
                     }
                     else
                     {
                         Directory.CreateDirectory(path);
+                        DirectoryExist = false;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,10 +69,11 @@ namespace Job_Doc_Organizer
 
                             if (!File.Exists(newPath))
                             {
-                                using (FileStream fs = File.Create(newPath))
+                                using (File.Create(newPath))
                                 {
 
                                 }
+                                
                             }
                         }
                     }
@@ -93,7 +99,7 @@ namespace Job_Doc_Organizer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -106,7 +112,7 @@ namespace Job_Doc_Organizer
                     string Resume_path = Path.Combine(path, Path.GetFileName(Orignal_ResumePath));
                     File.Copy(Orignal_ResumePath, Resume_path);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -134,10 +140,30 @@ namespace Job_Doc_Organizer
 
         private void Btn_SaveData_Click(object sender, EventArgs e)
         {
-            Create_Directory();
-            Create_JobLinkTxtFile();
-            Copy_Resume();
-            Copy_CoverLetter();
+            try
+            {
+                Create_Directory();
+                if (!DirectoryExist)
+                {
+                    Create_JobLinkTxtFile();
+                    Copy_Resume();
+                    Copy_CoverLetter();
+                    MessageBox.Show("Data Added Sucessfully", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void Btn_ClearForm_Click(object sender, EventArgs e)
+        {
+            Txt_FolderName.Text = null;
+            Txt_JobLink.Text = null;
+            Cb_Resume.Checked = false;
+            Cb_CoverLetter.Checked = false;
         }
     }
 }
